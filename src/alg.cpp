@@ -53,7 +53,8 @@ PMTreeNode* PMTree::getRoot() const {
 }
 
 void traverse
-(PMTreeNode* node, std::vector<char>& current, std::vector<std::vector<char>>& result) {
+(PMTreeNode* node, std::vector<char>& current,
+std::vector<std::vector<char>>& result) {
     if (node->symbol != '\0') {
         current.push_back(node->symbol);
     }
@@ -88,7 +89,8 @@ std::vector<char> getPerm1(PMTree& tree, int num) {
 }
 
 std::vector<char> getPermHelper
-(PMTreeNode* node, int index, int remaining, const std::vector<int>& factorials) {
+(PMTreeNode* node, int index, int remaining,
+const std::vector<int>& factorials) {
     std::vector<char> res;
     if (node->symbol != '\0') {
         res.push_back(node->symbol);
