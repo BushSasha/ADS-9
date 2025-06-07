@@ -18,7 +18,6 @@ int main() {
   }
     std::cout << std::endl;
   }
-  
   std::cout << "\nPermutation 1: ";
   auto p1 = getPerm1(tree, 1);
   for (char c : p1) std::cout << c;
@@ -72,7 +71,8 @@ int main() {
     }
     
     data << n << "," << time_all << "," << time_perm1 << "," << time_perm2 << "\n";
-    std::cout << "n=" << n << " completed." << std::endl;
+    std::cout << "n=" << n << 
+      " completed." << std::endl;
   }
   data.close();
   return 0;
