@@ -61,7 +61,7 @@ int main() {
                 start = std::chrono::high_resolution_clock::now();
                 getPerm1(tree, num);
                 end = std::chrono::high_resolution_clock::now();
-                time_perm1 += 
+                time_perm1 +=
                     std::chrono::duration<double>(end - start).count();
 
                 start = std::chrono::high_resolution_clock::now();
@@ -73,7 +73,7 @@ int main() {
             time_perm1 /= num_tests;
             time_perm2 /= num_tests;
         }
-        data << n << "," << std::scientific << time_all 
+        data << n << "," << std::scientific << time_all
              << "," << time_perm1 << "," << time_perm2 << "\n";
         std::cout << "n=" << n << " completed." << std::endl;
     }
