@@ -3,9 +3,9 @@
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
-#include  "tree.h"
 #include <vector>
 #include <algorithm>
+#include  "tree.h"
 
 PMTreeNode::PMTreeNode(char c) : symbol(c) {}
 
@@ -52,7 +52,8 @@ PMTreeNode* PMTree::getRoot() const {
     return root;
 }
 
-void traverse(PMTreeNode* node, std::vector<char>& current, std::vector<std::vector<char>>& result) {
+void traverse
+(PMTreeNode* node, std::vector<char>& current, std::vector<std::vector<char>>& result) {
     if (node->symbol != '\0') {
         current.push_back(node->symbol);
     }
@@ -86,7 +87,8 @@ std::vector<char> getPerm1(PMTree& tree, int num) {
     return all[num - 1];
 }
 
-std::vector<char> getPermHelper(PMTreeNode* node, int index, int remaining, const std::vector<int>& factorials) {
+std::vector<char> getPermHelper
+(PMTreeNode* node, int index, int remaining, const std::vector<int>& factorials) {
     std::vector<char> res;
     if (node->symbol != '\0') {
         res.push_back(node->symbol);
@@ -105,7 +107,8 @@ std::vector<char> getPermHelper(PMTreeNode* node, int index, int remaining, cons
     }
 
     PMTreeNode* child = node->children[child_index];
-    std::vector<char> child_perm = getPermHelper(child, remainder, remaining - 1, factorials);
+    std::vector<char> child_perm = getPermHelper
+    (child, remainder, remaining - 1, factorials);
     res.insert(res.end(), child_perm.begin(), child_perm.end());
     return res;
 }
