@@ -10,7 +10,7 @@ class PMTreeNode {
     char symbol;
     std::vector<PMTreeNode*> children;
 
-    PMTreeNode(char c);
+    explicit PMTreeNode(char c);
     ~PMTreeNode();
 };
 
@@ -22,7 +22,7 @@ class PMTree {
     void buildNode(PMTreeNode* parent, const std::vector<char>& elements);
 
  public:
-    PMTree(const std::vector<char>& elements);
+    explicit PMTree(const std::vector<char>& elements);
     ~PMTree();
 
     int getSize() const;
